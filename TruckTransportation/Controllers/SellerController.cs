@@ -1,25 +1,22 @@
 ﻿using System.Diagnostics;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using Seller.App.Queries;
 using TruckTransportation.Controllers._base;
 using TruckTransportation.Models;
 
 namespace TruckTransportation.Controllers;
 
-public class HomeController : BaseController
+public class SellerController : BaseController
 {
-    public HomeController(ILogger<HomeController> logger, IMediator mediator) : base(logger, mediator)
+    public SellerController(ILogger<HomeController> logger, IMediator mediator) : base(logger, mediator)
     {
     }
     
-    public IActionResult Index()
+    public async Task<IActionResult> Index(GetSellersQuery query)
     {
-        return View();
-    }
-
-    public IActionResult Privacy()
-    {
-        return View();
+        ViewData["Sellers"] = await Mediator.Send(query);
+        return View(query);
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

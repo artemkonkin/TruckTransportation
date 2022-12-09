@@ -1,17 +1,15 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
         <TargetFramework>net7.0</TargetFramework>
-        <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
-        <UserSecretsId>aspnet-TruckTransportation-58DFA598-C44B-407F-8470-09076EE76CEE</UserSecretsId>
+        <Nullable>enable</Nullable>
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Seller.App\Seller.App.csproj" />
+      <ProjectReference Include="..\Seller.Domain\Seller.Domain.csproj" />
       <ProjectReference Include="..\Shared.Context\Shared.Context.csproj" />
       <ProjectReference Include="..\Shared.Core\Shared.Core.csproj" />
-      <ProjectReference Include="..\Shared.Repository\Shared.Repository.csproj" />
     </ItemGroup>
 
 </Project>

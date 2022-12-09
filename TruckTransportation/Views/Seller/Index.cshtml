@@ -1,0 +1,14 @@
+﻿@model Seller.App.Queries.GetSellersQuery
+
+@{
+    ViewData["Title"] = "Sellers";
+    Layout = "_Layout";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+@Html.PartialAsync("_CreateSeller");
+
+<button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+    Button with data-bs-target
+</button>
